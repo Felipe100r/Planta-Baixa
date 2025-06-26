@@ -1,0 +1,273 @@
+/*configuraçao do corpo geral*/
+/*  cores utilizadas nos elementos
+verde; 006B29
+vermelho: 6B0600
+*/
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    /*definiçao de fontes cores e fundo da laiout geral*/
+    font-family: 'Montserrat', sans-serif;
+    background: url(../imagens/background.jpg) no-repeat center;
+    font-size: 15px;
+    color: #FFFFFF;
+  }
+
+  
+/* trecho de configuraçãp da logomarca topo */
+   #logo {
+    background: url(../imagens/logo.png) no-repeat center;
+    background-size: contain;
+  }
+  
+  #container a {
+    height: 100%;
+    display: block; 
+  }
+  
+   #barra {
+    border-bottom: #c0c0c0 2px solid;
+  }
+
+  #container li {
+    width: 100%;
+  
+  }
+  
+  #container {
+    display: flex;
+    height: 5vw;
+    width: 40vw;
+    margin: 5px 0px 0px 15px; 
+    list-style-type: none;
+    
+  }
+
+
+  /*############### menu geral ########################*/
+#menu {
+  width: auto;
+  margin: 5px 15px;
+  display: block;
+  justify-content: left;
+  
+  
+}
+
+#menu ul {
+  float: left;
+  
+}
+
+#menu ul li {
+  float: left;
+  list-style-type: none;
+  
+}
+
+#menu ul a {
+  font-size: 1em;
+  display: block;
+  padding: 0.5em 0.5em;
+  line-height: 2.1em;
+  text-decoration: none;
+  color: #fff;
+  background: url(../imagens/divisor-menu.png) no-repeat left center;
+  background-size: contain;
+  
+  /*divisor entre os elementos */
+}
+
+#menu ul a:hover {
+  color: #fff;
+   background: url(../imagens/divisor-menu.png) no-repeat left center, #058B87;
+}
+
+#menu ul .primeiro :hover {
+  color: #fff;
+   background: url(../imagens/divisor-menu-ESQUERDO.png) no-repeat left center, #058B87;
+    background-size: contain , 50%;
+}
+
+#menu ul .primeiro {
+   background: url(../imagens/divisor-menu.png) no-repeat left center, url(../imagens/divisor-menu-ESQUERDO.png) no-repeat left center;
+   background-size: contain;
+}
+
+#menu ul .ultimo {
+   background: url(../imagens/divisor-menu-DIREITO.png) no-repeat right center;
+   background-size: contain;
+}
+#menu ul .ultimo :hover {
+   background: url(../imagens/divisor-menu-DIREITO.png) no-repeat right center, url(../imagens/divisor-menu.png) no-repeat left center, #058B87;
+   background-size: contain;
+}
+
+
+
+#navegação {
+  width: center;
+  
+}
+
+/* bloco localizador do menu principal: */
+body.DOM #navegação a#DOM,
+body.SEG #navegação a#SEG,   
+body.TER #navegação a#TER,
+body.QUA #navegação a#QUA,
+body.QUI #navegação a#QUI,
+body.SEX #navegação a#SEX,
+body.SAB #navegação a#SAB
+ {
+  color: #fff;
+   background: url(../imagens/Marcador-Menu.png) no-repeat top ,
+   url(../imagens/divisor-menu.png) no-repeat left center;
+   background-size: 50%, contain;
+ 
+   
+  cursor: text;
+} 
+
+#dia-noite {
+  width: auto;
+  margin: 5px 15px;
+  display: block;
+  justify-content: right;
+  
+  
+}
+
+#dia-noite ul {
+  float: right;
+  
+}
+
+#dia-noite ul li {
+  float: left;
+  list-style-type: none;
+  
+}
+
+#dia-noite ul a {
+  font-size: 1em;
+  display: block;
+  padding: 0.5em 0.5em;
+  line-height: 2.1em;
+  text-decoration: none;
+  color: #fff;
+  background: url(../imagens/divisor-menu.png) no-repeat left center;
+  background-size: contain;
+  
+  /*divisor entre os elementos */
+}
+
+#dia-noite ul a:hover {
+  color: #fff;
+   background: url(../imagens/divisor-menu.png) no-repeat left center, #058B87;
+}
+
+#dia-noite ul .primeiro :hover {
+  color: #fff;
+   background: url(../imagens/divisor-menu-ESQUERDO.png) no-repeat left center, #058B87;
+    background-size: contain , 50%;
+}
+
+#dia-noite ul .primeiro {
+   background: url(../imagens/divisor-menu.png) no-repeat left center, url(../imagens/divisor-menu-ESQUERDO.png) no-repeat left center;
+   background-size: contain;
+}
+
+#dia-noite ul .ultimo {
+   background: url(../imagens/divisor-menu-DIREITO.png) no-repeat right center;
+   background-size: contain;
+}
+#dia-noite ul .ultimo :hover {
+   background: url(../imagens/divisor-menu-DIREITO.png) no-repeat right center, url(../imagens/divisor-menu.png) no-repeat left center, #058B87;
+   background-size: contain;
+}
+
+
+
+#navegação {
+  width: center;
+  
+}
+
+/* bloco localizador do menu principal: */
+body.DIA #dia-noite-marcador li#DIA,
+body.NOITE #dia-noite-marcador a#NOITE,
+ {
+  color: #fff;
+   background: url(../imagens/Marcador-Menu.png) no-repeat top ,
+   url(../imagens/divisor-menu.png) no-repeat left center;
+   background-size: 50%, contain;
+ 
+   
+  cursor: text;
+} 
+
+  /* trecho de configuraçãp rodape */
+
+  #container-informacoes {
+  display: flex;
+  background: #31313B;
+  padding: 20px;
+}
+
+#dados {
+  width: 85%;
+  display: flex;
+  justify-content: space-between;
+}
+
+#dados-empresa {
+  width: 30%;
+  color: #fff;
+  text-align: left;
+  font-size: 12px;
+  display: block;
+  padding: 25px;
+  border-left: 1px solid #c0c0c0;
+}
+
+#horario {
+  width: 30%;
+  color: #fff;
+  text-align: right;
+  font-size: 14px;
+  padding: 25px;
+  float: right;
+}
+
+#logo-rodape {
+  background: url(../imagens/logo-branco.png) no-repeat center;
+  background-size: contain;
+  padding: 5px;
+  width: 15%;
+}
+
+#container-rodape {
+  display: flex;
+  justify-content: space-between;
+  background: #31313B;
+  padding: 0 20px;
+  border-top: 1px solid #c0c0c0;
+}
+
+#rodape {
+  width: 500px;
+  color: #fff;
+  text-align: left;
+  font-size: 11px;
+  padding: 20px 5px;
+}
+
+#assinatura {
+  background: url(../imagens/Assinatura.png) no-repeat;
+  background-size: contain;
+  padding: 25px;
+  width: 50px;
+}
