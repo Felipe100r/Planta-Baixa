@@ -3,215 +3,602 @@
 verde; 006B29
 vermelho: 6B0600
 */
+@font-face {
+  font-family: "Fonte-geral";
+  src: url("../fontes/AGA-Rasheeq-Regular.ttf") format("truetype");
+  /* ou format("truetype") se for .ttf */
+  font-weight: normal;
+  font-style: normal;
+}
+
 * {
-    margin: 0;
-    padding: 0;
-  }
-  
-  body {
-    /*definiçao de fontes cores e fundo da laiout geral*/
-    font-family: 'Montserrat', sans-serif;
-    background: url(../imagens/background.jpg) no-repeat center;
-    font-size: 15px;
-    color: #FFFFFF;
-  }
+  margin: 0;
+  padding: 0;
+}
 
-  
+body {
+  /*definiçao de fontes cores e fundo da laiout geral*/
+  font-family: 'Montserrat', sans-serif;
+  background: url(../imagens/background.jpg) no-repeat center;
+  font-size: 15px;
+  color: #FFFFFF;
+}
+
+
 /* trecho de configuraçãp da logomarca topo */
-   #logo {
-    background: url(../imagens/logo.png) no-repeat center;
-    background-size: contain;
-  }
-  
-  #container a {
-    height: 100%;
-    display: block; 
-  }
-  
-   #barra {
-    border-bottom: #c0c0c0 2px solid;
-  }
+#logo {
+  background: url(../imagens/logo.png) no-repeat center;
+  background-size: contain;
+}
 
-  #container li {
-    width: 100%;
-  
-  }
-  
-  #container {
-    display: flex;
-    height: 5vw;
-    width: 40vw;
-    margin: 5px 0px 0px 15px; 
-    list-style-type: none;
-    
-  }
+#container a {
+  height: 100%;
+  display: block;
+}
+
+#barra {
+  border-bottom: #c0c0c0 2px solid;
+}
+
+#container li {
+  width: 100%;
+
+}
+
+#container {
+  display: flex;
+  height: 5vw;
+  width: 40vw;
+  margin: 5px 0px 0px 15px;
+  list-style-type: none;
+
+}
 
 
-  /*############### menu geral ########################*/
+/*############### menu geral ########################*/
 #menu {
   width: auto;
   margin: 5px 15px;
   display: block;
   justify-content: left;
-  
-  
+
 }
 
 #menu ul {
   float: left;
-  
+  display: flex;
+ 
+
 }
 
 #menu ul li {
   float: left;
-  list-style-type: none;
-  
+  list-style: none;
+  transition:0.5s;
+
 }
 
-#menu ul a {
-  font-size: 1em;
+#menu ul:hover li a {
+    transform: scale(1.2);
+    opacity: 0.2;
+    filter: blur(3px);
+}
+
+#menu ul li a {
+  font-size: clamp(1.0rem, 1.7vw, 2rem);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-family: Fonte-geral;
   display: block;
-  padding: 0.5em 0.5em;
-  line-height: 2.1em;
+  padding: 0em 0.5em;
+  line-height: 1.5em;
   text-decoration: none;
   color: #fff;
   background: url(../imagens/divisor-menu.png) no-repeat left center;
   background-size: contain;
-  
+  text-transform:uppercase;
+  transition:0.5s;
+
   /*divisor entre os elementos */
 }
 
-#menu ul a:hover {
-  color: #fff;
-   background: url(../imagens/divisor-menu.png) no-repeat left center, #058B87;
+#menu ul li a:hover {
+  color: black;
+  background: url(../imagens/divisor-menu.png) no-repeat left center, #058B87;
+  transform: scale(1.2);
+  opacity: 1;
+  filter: blur(0);
+  text-decoration: none;
 }
+
+#menu ul li a:before {
+    content: '';
+    position:absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #DC3B00;
+    transition: 0.5s;
+    transform-origin: right;
+    transform:scaleX(0);
+    z-index: -1;
+}
+
+#menu ul li a:hover:before {
+    transition: transform 0.5s;
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+
 
 #menu ul .primeiro :hover {
   color: #fff;
-   background: url(../imagens/divisor-menu-ESQUERDO.png) no-repeat left center, #058B87;
-    background-size: contain , 50%;
+  background: url(../imagens/divisor-menu-ESQUERDO.png) no-repeat left center, #058B87;
+  background-size: contain, 50%;
 }
 
 #menu ul .primeiro {
-   background: url(../imagens/divisor-menu.png) no-repeat left center, url(../imagens/divisor-menu-ESQUERDO.png) no-repeat left center;
-   background-size: contain;
+  background: url(../imagens/divisor-menu.png) no-repeat left center, url(../imagens/divisor-menu-ESQUERDO.png) no-repeat left center;
+  background-size: contain;
 }
 
 #menu ul .ultimo {
-   background: url(../imagens/divisor-menu-DIREITO.png) no-repeat right center;
-   background-size: contain;
+  background: url(../imagens/divisor-menu-DIREITO.png) no-repeat right center;
+  background-size: contain;
 }
+
 #menu ul .ultimo :hover {
-   background: url(../imagens/divisor-menu-DIREITO.png) no-repeat right center, url(../imagens/divisor-menu.png) no-repeat left center, #058B87;
-   background-size: contain;
+  background: url(../imagens/divisor-menu-DIREITO.png) no-repeat right center, url(../imagens/divisor-menu.png) no-repeat left center, #058B87;
+  background-size: contain;
 }
 
 
 
 #navegação {
   width: center;
-  
+
 }
 
 /* bloco localizador do menu principal: */
 body.DOM #navegação a#DOM,
-body.SEG #navegação a#SEG,   
+body.SEG #navegação a#SEG,
 body.TER #navegação a#TER,
 body.QUA #navegação a#QUA,
 body.QUI #navegação a#QUI,
 body.SEX #navegação a#SEX,
-body.SAB #navegação a#SAB
- {
+body.SAB #navegação a#SAB {
   color: #fff;
-   background: url(../imagens/Marcador-Menu.png) no-repeat top ,
-   url(../imagens/divisor-menu.png) no-repeat left center;
-   background-size: 50%, contain;
- 
-   
+  background: url(../imagens/Marcador-Menu.png) no-repeat top,
+    url(../imagens/divisor-menu.png) no-repeat left center;
+  background-size: 35%, contain;
   cursor: text;
-} 
+}
 
 #dia-noite {
   width: auto;
   margin: 5px 15px;
   display: block;
   justify-content: right;
-  
-  
+
+
 }
 
 #dia-noite ul {
   float: right;
-  
+
 }
 
 #dia-noite ul li {
   float: left;
   list-style-type: none;
-  
+  transition: 0.5s;
+
 }
 
 #dia-noite ul a {
-  font-size: 1em;
+  font-size: 3em;
+  font-family: Fonte-geral;
+  font-weight: bold;
   display: block;
-  padding: 0.5em 0.5em;
-  line-height: 2.1em;
+  padding: 0em 0.3em;
+  line-height: 1em;
+  text-decoration: none;
+  color: #058B87;
+  /* background: url(../imagens/divisor-menu.png) no-repeat left center; */
+  background-size: contain;
+  font-size: clamp(2.5rem, 3vw, 3.5rem);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  transition: 0.5s;
+
+}
+
+#dia-noite ul:hover li a {
+  transform: scale(1.4);
+  opacity: 0.2;
+  filter: blur(3px);
+}
+
+#dia-noite ul li a:hover {
+  transform: scale(1.5);
+  opacity: 1;
+  filter: blur(0);
   text-decoration: none;
   color: #fff;
-  background: url(../imagens/divisor-menu.png) no-repeat left center;
-  background-size: contain;
-  
-  /*divisor entre os elementos */
 }
+
+#dia-noite ul li a:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #058B87;
+  transition: 0.5s;
+  transform-origin: right;
+  transform: scaleX(0);
+  z-index: -1;
+}
+#dia-noite ul li a#DIA:before {
+  background: #DC3B00;
+}
+
+#dia-noite ul li a:hover:before {
+  transition: transform 0.5s;
+  transform-origin: left;
+  transform: scaleX(1);
+}
+
+
+#dia-noite ul a#DIA {
+  color: #DC3B00;
+}
+
 
 #dia-noite ul a:hover {
+  color: #fff;   
+  background: #058B87;
+}
+#dia-noite ul a#DIA:hover {
+  color: black;
+  background: #DC3B00;
+}
+
+
+
+/* bloco localizador do menu principal: */
+
+#tela-flutuante {
+  padding: 50px;
+  width: 60vw;
+  right: 30vw;
+  margin: 100px 150px 50px 50px;
+  background: url(../imagens/lateral-direita.png) no-repeat top right, url(../imagens/lateral-esquerda.png) no-repeat bottom left, rgba(255, 255, 255, 9%);
+  box-shadow: black 3px 3px 8px;
+  display: flex;
+  flex-direction: column;
+  min-width: 500px;
+
+  /* border: red 1px solid; */
+}
+
+#tela-flutuante h2#nota {
+  font-family: Fonte-geral;
+  font-size: 2.5em;
+  text-align: center;
+  display: flex;
+  position: relative;
+  top: -70px;
+  left: -65px;
+  background: url(../imagens/background-nota.png ) no-repeat left center;
+  background-size: 100% 100%;
+  color: #058B87;
+  width: 40px;
+  filter: drop-shadow(black 1px 1px 2px);
+  justify-content: center;
+}
+
+#titulo {
+  width: 50%;
+  display: block;
+  flex-direction: column;
+  float: left;
+  position: relative;
+  /* top: -125px; */
+  left: -10px;
+  letter-spacing: 1px;
+  margin-top: -125px;
+
+}
+
+#titulo h2 {
+  font-family: Fonte-geral;
+  float: left;
+  display: block;
+  line-height: 40px;
+  font-size: clamp(2rem, 5vw, 4rem);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+}
+
+
+#titulo h3 {
+  font-family: Fonte-geral;
+  font-size: 1.5rem;
+  float: left;
+  display: block;
+  color: #DC3B00;
+  font-size: clamp(1rem, 2vw, 1.4rem);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+}
+
+#blocos {
+  display: flex;
+  margin-top: 20px;
+}
+
+#itens {
+  display: block;
+  flex-direction: column;
+  width: 45%;
+  align-items: top;
+  min-width: 250px;
+  margin: 10px;
+  
+
+}
+
+#detalhes {
+  display: flex;
+  position: relative;
+  top: -50px;
+  list-style-type: none;
+  /* width: 100%; */
+  height: 50%;
+  padding: 20px;
+  align-items: center;
+  justify-content: center;
+  background: url(../imagens/detalhes-borda.png) no-repeat left center;
+  background-size: 100% 60%;
+
+}
+
+
+
+#detalhes ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5px;
+  margin: 5px;
+  width: 50%;
+
+}
+
+#detalhes li {
+  align-items: center;
+  text-align: center;
+  display: flex;
+  width: 110%;
+
+
+}
+
+#detalhes a {
+  text-decoration: none;
+  display: flex;
+  width: 100%;
+  height: 100%;
   color: #fff;
-   background: url(../imagens/divisor-menu.png) no-repeat left center, #058B87;
+  padding: 5px;
+  margin: 5px;
+  line-height: 50px;
+  float: center;
+  font-family: Fonte-geral;
+  text-align: center;
+  justify-content: center;
+  font-size: clamp(1.5rem, 1.8vw, 2rem);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+
 }
 
-#dia-noite ul .primeiro :hover {
-  color: #fff;
-   background: url(../imagens/divisor-menu-ESQUERDO.png) no-repeat left center, #058B87;
-    background-size: contain , 50%;
+#local {
+  background: url(../imagens/detalhes-local.png) no-repeat left center;
+  background-size: contain;
 }
 
-#dia-noite ul .primeiro {
-   background: url(../imagens/divisor-menu.png) no-repeat left center, url(../imagens/divisor-menu-ESQUERDO.png) no-repeat left center;
-   background-size: contain;
+#local:hover {
+  background: url(../imagens/detalhes-local-hover.png) no-repeat left center;
+  background-size: contain;
 }
 
-#dia-noite ul .ultimo {
-   background: url(../imagens/divisor-menu-DIREITO.png) no-repeat right center;
-   background-size: contain;
-}
-#dia-noite ul .ultimo :hover {
-   background: url(../imagens/divisor-menu-DIREITO.png) no-repeat right center, url(../imagens/divisor-menu.png) no-repeat left center, #058B87;
-   background-size: contain;
+#mais-detalhes {
+  background: url(../imagens/mais-detalhes.png) no-repeat left center;
+  background-size: contain;
 }
 
+#mais-detalhes:hover {
+  background: url(../imagens/mais-detalhes-hoves.png) no-repeat left center;
+  background-size: contain;
+
+}
+
+#como-chegar {
+  background: url(../imagens/detalhes-como-chegar.png) no-repeat left center;
+  background-size: contain;
+}
+
+#como-chegar:hover {
+  background: url(../imagens/detalhes-como-chegar-hover.png) no-repeat left center;
+  background-size: contain;
+}
+
+#imagens {
+  background: url(../imagens/detalhes-imagens.png) no-repeat left center;
+  background-size: contain;
+}
+
+#imagens:hover {
+  background: url(../imagens/detalhes-imagens-hover.png) no-repeat left center;
+  background-size: contain;
+}
 
 
-#navegação {
-  width: center;
+
+
+#descricao {
+  display: block;
+  padding: 20px;
+  /* width: 100%; */
+  /* height: 70%; */
+  background: url(../imagens/descricao-borda.png) no-repeat left center;
+  background-size: 100% 100%;
+  position: relative;
+  top: -100px;
+  min-height: 150px;
+  margin-top: 5px;
+ 
+
+}
+
+#titulo-descricao {
+  background: url(../imagens/detalhes-titulo-barra.png) no-repeat left bottom, url(../imagens/detalhes-titulo-icone.png) no-repeat left top;
+  background-size: contain, 18%;
+  width: 60%;
+  height: 4.3vw;
+  /* position: relative;
+  top: -10px;
+  left: -10px; */
+  display: flex;
+  flex-direction: column;
+
+}
+
+#titulo-descricao h2 {
+  font-size: clamp(0.2rem, 3vw, 3rem);
+  text-align: right;
+  display: block;
+  line-height: 60%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 5vw;
+  color: #74DEE2;
+  font-family: Fonte-geral;
+  position: relative;
+  top: 0px;
+  right: 0px;
+
+
+}
+
+#titulo-descricao h3 {
+  font-size: clamp(0.8rem, 1.5vw, 2rem);
+  text-align: right;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 30%;
+  color: #DC3B00;
+  font-family: Fonte-geral;
+  line-height: 60%;
+  float: right;
+  padding-bottom: 30px;
+
+}
+
+
+#descricao p {
+  width: 90%;
+  font-size: clamp(0.5rem, 0.7vw, 1.5rem);
+  overflow: hidden;
+  position: relative;
+  line-height: 1em;
+  margin-top: 10px;
+  text-align: justify;
+  padding-right: 1em;
+  left: 10px;
+
+}
+
+#descricao p:before {
+  content: '...';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+#fotos {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  background: url(../imagens/fotos-contorno.png) no-repeat center;
+  background-size: 100% 100%;
+  max-height: 420px;
+  margin: 10px;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+ 
+
+}
+
+#imagens-principal {
+  width: 95%;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  background: url(../imagens/imagen-foto.png) no-repeat top;
+  background-size: cover;
+  height: 80%;
+ 
+}
+
+
+#barra-percentual {
+  width: 95%;
+  padding: 10px;
+  margin-top: 5px;
+  display: flex;
+  justify-content: bottom;
+  align-items: center;
+  background: url(../imagens/barra-progrco-foto.png) no-repeat center top;
+  background-size: contain;
+  height: 9%;
   
 }
 
-/* bloco localizador do menu principal: */
-body.DIA #dia-noite-marcador li#DIA,
-body.NOITE #dia-noite-marcador a#NOITE,
- {
-  color: #fff;
-   background: url(../imagens/Marcador-Menu.png) no-repeat top ,
-   url(../imagens/divisor-menu.png) no-repeat left center;
-   background-size: 50%, contain;
- 
-   
-  cursor: text;
-} 
 
-  /* trecho de configuraçãp rodape */
 
-  #container-informacoes {
+
+
+
+
+
+
+
+
+
+
+/* trecho de configuraçãp rodape */
+
+#container-informacoes {
   display: flex;
   background: #31313B;
   padding: 20px;
